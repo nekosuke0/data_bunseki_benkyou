@@ -24,7 +24,7 @@ for i, j in enumerate(soup.find_all('div', 'a-row a-size-small')):
 
 #値段の取得
 for k in soup.find_all('span', 'p13n-sc-price'):
-    price.append(k.text.replace("￥", ""))
+    price.append(k.text.replace("￥", "").replace(',', ''))
 
 #リストの結合
 data = list(zip(title, author, types, price))
